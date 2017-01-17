@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+
+    {% for css in layout.css %}
+        <link rel="stylesheet" type="text/css" href="/assets/{{ css }}" />
+    {% endfor %}
+
+    {% for css in page.css %}
+        <link rel="stylesheet" type="text/css" href="/assets/{{ css }}" />
+    {% endfor %}
   </head>
 
   <body>
